@@ -7,14 +7,12 @@ describe('CountBy', () => {
     });
 
     test('should return an empty object for an empty collection with undefined iteratee', () => {
-        const emptyCollection = [];
-        const result = countBy(emptyCollection, undefined);
+        const result = countBy([], undefined);
         expect(result).toEqual({});
     });
 
     test('should return an empty object for an empty collection', () => {
-        const emptyCollection = [];
-        const result = countBy(emptyCollection, item => item.category);
+        const result = countBy([], item => item.category);
         expect(result).toEqual({});
     });
 

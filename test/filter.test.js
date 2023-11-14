@@ -7,7 +7,6 @@ describe('Filter', () => {
     });
 
     test('should return an empty array when predicate undefined (length 0)', () => {
-        const emptyArray = [];
         const result = filter([], undefined);
         expect(result).toEqual([]);
     });
