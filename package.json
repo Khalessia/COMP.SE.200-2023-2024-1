@@ -5,10 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1"
+    "test": "jest",
+    "test-ci": "jest --reporters='@matteoh2o1999/github-actions-jest-reporter'",
+    "coverage": "jest --coverage && coveralls < ./coverage/lcov.info"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@matteoh2o1999/github-actions-jest-reporter": "^2.0.0",
+    "babel-jest": "^29.7.0",
+    "coveralls": "^3.1.1",
+    "jest": "^29.7.0"
+  }
 }
