@@ -1,35 +1,35 @@
 import capitalize from '../src/capitalize';
 
 describe('Capitalize', () => {
-    test('Capitalize empty string', () => {
+    test('should return empty string from empty string', () => {
         expect(capitalize('')).toBe('');
     });
 
-    test('Capitalize null', () => {
+    test('should return empty string from null', () => {
         expect(capitalize(null)).toBe('');
     });
 
-    test('Capitalize undefined', () => {
+    test('should return empty string from undefined', () => {
         expect(capitalize(undefined)).toBe('');
     });
 
-    test('Capitalize capitalized word', () => {
+    test('should make no changes to capitalized word', () => {
         expect(capitalize('Abc')).toBe('Abc');
     });
 
-    test('Capitalize uppercase word with numbers', () => {
+    test('should capitalize uppercase word', () => {
         expect(capitalize('A012ABC')).toBe('A012abc');
     });
 
-    test('Capitalize uncapitalized word with numbers', () => {
+    test('should capitalize uncapitalized word', () => {
         expect(capitalize('a012ABC')).toBe('A012abc');
     });
 
-    test('Capitalize word starting with numbers', () => {
+    test('should capitalize word starting with numbers', () => {
         expect(capitalize('012aBC')).toBe('012abc');
     });
 
-    test('Capitalize word starting with a negative number', () => {
+    test('should capitalize word starting starting with a hyphen', () => {
         expect(capitalize('-012aBC')).toBe('-012abc');
     });
 
