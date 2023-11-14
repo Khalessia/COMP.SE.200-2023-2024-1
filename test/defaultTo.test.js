@@ -1,4 +1,4 @@
-import defaultTo from '../src/defaultTo.js';
+import defaultTo from '../src/defaultTo';
 
 describe('defaultTo', function() {
     test('should return defaultValue if value is NaN', () => {
