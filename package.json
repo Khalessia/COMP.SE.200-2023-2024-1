@@ -6,6 +6,16 @@
   "type": "module",
   "scripts": {
     "test": "jest",
+    "test-capitalize": "jest capitalize.test.js",
+    "test-ceil": "jest ceil.test.js",
+    "test-countBy": "jest countBy.test.js",
+    "test-defaultTo": "jest defaultTo.test.js",
+    "test-filter": "jest filter.test.js",
+    "test-isEmpty": "jest isEmpty.test.js",
+    "test-reduce": "jest reduce.test.js",
+    "test-toString": "jest toString.test.js",
+    "test-upperFirst": "jest upperFirst.test.js",
+    "test-words": "jest words.test.js",
     "test-ci": "jest --reporters='@matteoh2o1999/github-actions-jest-reporter'",
     "coverage": "(jest --coverage && coveralls < ./coverage/lcov.info) || coveralls < ./coverage/lcov.info"
   },
