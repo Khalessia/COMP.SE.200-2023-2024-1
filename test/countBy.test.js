@@ -55,12 +55,32 @@ describe('CountBy', () => {
     it('should return an empty object because of blank categories', () => {
         const products = [
             { name: 'Product 1', category: '', price: 10 },
-            { name: 'Product 2', category: '', price: 20 },
-            { name: 'Product 3', category: '', price: 30 },
-            { name: 'Product 4', category: '', price: 40 },
-            { name: 'Product 5', category: '', price: 50 },
         ];
         const result = countBy(products, item => item.category);
+        expect(result).toEqual({});
+    });
+
+    it('should return an empty object because of null categories', () => {
+        const products = [
+            { name: 'Product 1', category: null, price: 10 },
+        ];
+        const result = countBy(products, item => item.category);
+        expect(result).toEqual({});
+    });
+
+    it('should return an empty object because of undefined categories', () => {
+        const products = [
+            { name: 'Product 1', category: undefined, price: 10 },
+        ];
+        const result = countBy(products, item => item.category);
+        expect(result).toEqual({});
+    });
+
+    it('should return an empty object because of NaN prices', () => {
+        const products = [
+            { name: 'Product 1', category: 'Category A', price: NaN },
+        ];
+        const result = countBy(products, item => item.price);
         expect(result).toEqual({});
     });
 
