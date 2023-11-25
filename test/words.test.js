@@ -23,7 +23,7 @@ describe('words', () => {
 
     it('should not match a word based on a different keyword in the pattern', () => {
         const result = words('wheat', /salt/g);
-        expect(result).toEqual(['']);
+        expect(result).toEqual([]);
     });
 
     it('should throw an exception when passed a null', () => {
