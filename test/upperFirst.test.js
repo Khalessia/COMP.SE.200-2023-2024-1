@@ -36,6 +36,11 @@ describe('upperFirst', () => {
         expect(result).toBe('123aBC');
     });
 
+    it('should not change if first character is a symbol', () => {
+        const result = upperFirst('#aBC');
+        expect(result).toBe('#aBC');
+    });
+
     it('should work with unicode characters', () => {
         const result = upperFirst('éä');
         expect(result).toBe('Éä');
