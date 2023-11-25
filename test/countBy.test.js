@@ -20,7 +20,7 @@ describe('CountBy', () => {
         const products = [
             { name: 'Product 1', category: 'Category A', price: 10 },
         ];
-        const result = countBy(products, item => item.producer);
+        const result = countBy(products, item => item.category);
         expect(result).toEqual({'Category A': 1});
     });
 
