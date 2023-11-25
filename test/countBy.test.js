@@ -1,22 +1,22 @@
 import countBy from '../src/countBy';
 
 describe('CountBy', () => {
-    test('should throw a TypeError for an undefined collection', () => { // New test case
+    it('should throw a TypeError for an undefined collection', () => { // New test case
         const result = countBy(undefined, item => item.category);
         expect(result).toThrow(TypeError);
     });
 
-    test('should return an empty object for an empty collection with undefined iteratee', () => {
+    it('should return an empty object for an empty collection with undefined iteratee', () => {
         const result = countBy([], undefined);
         expect(result).toEqual({});
     });
 
-    test('should return an empty object for an empty collection', () => {
+    it('should return an empty object for an empty collection', () => {
         const result = countBy([], item => item.category);
         expect(result).toEqual({});
     });
 
-    test('should count a product by category', () => {
+    it('should count a product by category', () => {
         const products = [
             { name: 'Product 1', category: 'Category A', price: 10 },
         ];
@@ -24,7 +24,7 @@ describe('CountBy', () => {
         expect(result).toEqual({'Category A': 1});
     });
 
-    test('should count products by category', () => {
+    it('should count products by category', () => {
         const products = [
             { name: 'Product 1', category: 'Category A', price: 10 },
             { name: 'Product 2', category: 'Category B', price: 20 },
@@ -40,7 +40,7 @@ describe('CountBy', () => {
         });
     });
 
-    test('should return an empty object because of a non-existent iteratee', () => {
+    it('should return an empty object because of a non-existent iteratee', () => {
         const products = [
             { name: 'Product 1', category: 'Category A', price: 10 },
             { name: 'Product 2', category: 'Category B', price: 20 },
@@ -52,7 +52,7 @@ describe('CountBy', () => {
         expect(result).toEqual({});
     });
 
-    test('should return an empty object because of blank categories', () => {
+    it('should return an empty object because of blank categories', () => {
         const products = [
             { name: 'Product 1', category: '', price: 10 },
             { name: 'Product 2', category: '', price: 20 },
@@ -64,7 +64,7 @@ describe('CountBy', () => {
         expect(result).toEqual({});
     });
 
-    test('should count products correctly by category with some blanks', () => {
+    it('should count products correctly by category with some blanks', () => {
         const products = [
             { name: 'Product 1', category: 'Category A', price: 10 },
             { name: 'Product 2', category: 'Category B', price: 20 },
