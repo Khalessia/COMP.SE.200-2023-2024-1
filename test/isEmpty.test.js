@@ -1,31 +1,28 @@
 import isEmpty from '../src/isEmpty.js';
 
 describe('isEmpty', () => {
-    // TODO: Check if redundant tests can be removed
+    // Null
     it('should return true for null', () => {
         expect(isEmpty(null)).toBe(true);
     });
 
-    it('should return true for boolean true', () => {
-        expect(isEmpty(true)).toBe(true);
+    // Primitives
+    it('should return true for boolean primitives', () => {
+        expect(isEmpty(false)).toBe(true);
     });
 
-    it('should return true for number 1', () => {
-        expect(isEmpty(1)).toBe(true);
+    it('should return true for number primitives', () => {
+        expect(isEmpty(0)).toBe(true);
     });
 
-    it('should return false for array [1, 2, 3]', () => {
-        expect(isEmpty([1, 2, 3])).toBe(false);
+    it('should return true for bigint primitives', () => {
+        expect(isEmpty(BigInt(0))).toBe(true);
     });
 
-    it('should return false for string "abc"', () => {
-        expect(isEmpty('abc')).toBe(false);
+    it('should return true for undefined', () => {
+        expect(isEmpty(undefined)).toBe(true);
     });
-
-    it('should return false for object { a: 1 }', () => {
-        expect(isEmpty({ a: 1 })).toBe(false);
-    });
-    // End of possible redundant tests
+    // End of primitives that are not in other tests
 
     // Array with length 0
     it('should return true for an empty array', () => {
