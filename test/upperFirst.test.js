@@ -1,6 +1,16 @@
 import upperFirst from '../src/upperFirst.js';
 
 describe('upperFirst', () => {
+    it('should return an empty string when passed an empty string', () => {
+        const result = upperFirst('');
+        expect(result).toBe('');
+    });
+
+    it('should return an empty string when passed null', () => {
+        const result = upperFirst(null);
+        expect(result).toBe('');
+    });
+
     it('should convert the first character of a string to upper case', () => {
         const result = upperFirst('fred');
         expect(result).toBe('Fred');
@@ -16,8 +26,4 @@ describe('upperFirst', () => {
         expect(result).toBe('F');
     });
 
-    it('should return an empty string when passed an empty string', () => {
-        const result = upperFirst('');
-        expect(result).toBe('');
-    });
 });
