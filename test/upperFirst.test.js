@@ -11,6 +11,11 @@ describe('upperFirst', () => {
         expect(result).toBe('');
     });
 
+    it('should return an empty string when passed undefined', () => {
+        const result = upperFirst(undefined);
+        expect(result).toBe('');
+    });
+
     it('should convert the first character of a string to upper case', () => {
         const result = upperFirst('fred');
         expect(result).toBe('Fred');
@@ -24,6 +29,16 @@ describe('upperFirst', () => {
     it('should handle single character strings', () => {
         const result = upperFirst('f');
         expect(result).toBe('F');
+    });
+
+    it('should not change if first character is a number', () => {
+        const result = upperFirst('123aBC');
+        expect(result).toBe('123aBC');
+    });
+
+    it('should work with unicode characters', () => {
+        const result = upperFirst('éä');
+        expect(result).toBe('Éä');
     });
 
 });
