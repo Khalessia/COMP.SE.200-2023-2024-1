@@ -31,18 +31,6 @@ describe('toString', () => {
         expect(result).toBe("string");
     });
 
-    // Redundant?
-    it('should return the same string when input is a string of numbers "123"', () => {
-        const result = toString("123");
-        expect(result).toBe("123");
-    });
-
-    // Redundant?
-    it('should return the same string when input is a string of numbers and characters "123abc"', () => {
-        const result = toString("123abc");
-        expect(result).toBe("123abc");
-    });
-
     it('should convert an array to a string', () => {
         const result = toString([1, 2, 3]);
         expect(result).toBe('1,2,3');
