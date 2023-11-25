@@ -33,12 +33,6 @@ describe('Ceil', () => {
         expect(ceil(1.001,-1)).toBe(10);
     });
 
-    // Redundant test case (or is it?)
-    /*
-    test('should ceil integers with multiple place values according to negative precision', () => {
-        expect(ceil(10.001,-1)).toBe(20);
-    });*/
-
     it('should ceil 100.001 to 110', () => { // New test case
         expect(ceil(100.001,-1)).toBe(110);
     });
@@ -46,13 +40,6 @@ describe('Ceil', () => {
     it('should ceil -0.999 to 0', () => {
         expect(ceil(-0.999)).toBe(0);
     });
-    
-    // Redundant test case (or is it?)
-    /*
-    test('should ceil a negative number with multiple place values according to negative precision', () => {
-        expect(ceil(-19.999,-1)).toBe(-10);
-    });
-    */
 
     it('should ceil -19.999 to -19.9', () => { // New test case
         expect(ceil(-19.999,1)).toBe(-19.9);
@@ -62,12 +49,6 @@ describe('Ceil', () => {
         expect(ceil(-109.999,-1)).toBe(-100);
     });
 
-    // Redundant test case
-    /*
-    test('should return Max safe integer - 1', () => {
-        expect(ceil(Number.MAX_SAFE_INTEGER - 1)).toBe(Number.MAX_SAFE_INTEGER - 1);
-    });*/
-
     it('should return max safe integer', () => {
         expect(ceil(Number.MAX_SAFE_INTEGER)).toBe(Number.MAX_SAFE_INTEGER);
     });
@@ -76,10 +57,9 @@ describe('Ceil', () => {
         expect(ceil(Number.MAX_SAFE_INTEGER + 1)).toThrow(RangeError);
     });
 
-    // Redundant test case
-    /*test('Max safe integer to precision -1', () => {
+    it('should throw RangeError if result is unsafe', () => {
         expect(ceil(Number.MAX_SAFE_INTEGER,-1)).toThrow(RangeError);
-    });*/
+    });
 
     it('should return infinity', () => { // New test case
         expect(ceil(Infinity)).toBe(Infinity);

@@ -18,19 +18,47 @@ describe('Capitalize', () => {
     });
 
     it('should capitalize uppercase word', () => {
-        expect(capitalize('A012ABC')).toBe('A012abc');
+        expect(capitalize('ABC')).toBe('Abc');
     });
 
-    it('should capitalize uncapitalized word', () => {
-        expect(capitalize('a012ABC')).toBe('A012abc');
+    it('should capitalize lowercase word', () => {
+        expect(capitalize('abc')).toBe('Abc');
     });
 
-    it('should capitalize word starting with numbers', () => {
-        expect(capitalize('012aBC')).toBe('012abc');
+    it('should make no changes to numbers', () => {
+        expect(capitalize('123')).toBe('123');
     });
 
-    it('should capitalize word starting starting with a hyphen', () => {
-        expect(capitalize('-012aBC')).toBe('-012abc');
+    it('should convert to lowercase after numbers', () => {
+        expect(capitalize('123ABC')).toBe('123abc');
+    });
+
+    it('should make no changes to special characters', () => {
+        expect(capitalize('-')).toBe('-');
+    });
+
+    it('should convert to lowercase after special characters', () => {
+        expect(capitalize('-ABC')).toBe('-abc');
+    });
+
+    it('should capitalize unicode character', () => {
+        expect(capitalize('é')).toBe('É');
+    });
+
+    it('should convert to lowercase after unicode characters', () => {
+        expect(capitalize('éABC')).toBe('Éabc');
+    });
+
+    it('should capitalize unicode word', () => {
+        expect(capitalize('éÀbc')).toBe('Éàbc');
+    });
+
+    it('should make no changes to whitespaces', () => {
+        expect(capitalize(' ')).toBe(' ');
+    });
+
+    it('should convert to lowercase after whitespaces', () => {
+        expect(capitalize(' ABC')).toBe(' abc');
     });
 
 });

@@ -25,7 +25,7 @@ describe('defaultTo', function() {
         expect(defaultTo(false,1)).toEqual(false);
     });
 
-    it('should return boolean value as not a number', () => { // New test case (Redundant?)
-        expect(defaultTo(true,0)).not.toEqual(Number(true));
+    it('should not do a type conversion for booleans', () => {
+        expect(defaultTo(false,1)).not.toEqual(1);
     });
 });

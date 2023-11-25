@@ -60,7 +60,7 @@ describe('CountBy', () => {
             { name: 'Product 4', category: '', price: 40 },
             { name: 'Product 5', category: '', price: 50 },
         ];
-        const result = countBy(products, item => item.producer);
+        const result = countBy(products, item => item.category);
         expect(result).toEqual({});
     });
 
@@ -72,8 +72,12 @@ describe('CountBy', () => {
             { name: 'Product 4', category: 'Category C', price: 40 },
             { name: 'Product 5', category: '', price: 50 },
         ];
-        const result = countBy(products, item => item.producer);
-        expect(result).toEqual({});
+        const result = countBy(products, item => item.category);
+        expect(result).toEqual({
+            'Category A': 2,
+            'Category B': 1,
+            'Category C': 1,
+        });
     });
 
 });
