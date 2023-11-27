@@ -114,15 +114,17 @@ describe('isEmpty', () => {
 
     // Prototype with 0 keys
     it('should return true for a prototype with 0 keys', () => {
-        const obj = Object.create(null);
-        expect(isEmpty(obj)).toBe(true);
+        function MyObject() { }
+        let prototypeObj = MyObject.prototype;
+        expect(isEmpty(prototypeObj)).toBe(true);
     });
 
     // Prototype with 1 key
     it('should return false for a prototype with 1 key', () => {
-        const obj = Object.create(null);
-        obj.key = 'value';
-        expect(isEmpty(obj)).toBe(false);
+        function MyObject() { }
+        let prototypeObj = MyObject.prototype;
+        prototypeObj.key = 'value';
+        expect(isEmpty(prototypeObj)).toBe(false);
     });
 
     // Object with 0 enumerable string keyed properties
