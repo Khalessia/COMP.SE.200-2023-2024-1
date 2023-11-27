@@ -140,4 +140,12 @@ describe('isEmpty', () => {
         Object.defineProperty(obj, 'key', { value: 'value', enumerable: true });
         expect(isEmpty(obj)).toBe(false);
     });
+
+    // Object with 1 enumerable symbol keyed property
+    it('should return true for an object with 1 enumerable symbol keyed property', () => {
+        const obj = Object.create(null);
+        const symbol = Symbol('key');
+        Object.defineProperty(obj, symbol, { value: 'value', enumerable: true });
+        expect(isEmpty(obj)).toBe(true);
+    });
 });
