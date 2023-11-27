@@ -148,4 +148,11 @@ describe('isEmpty', () => {
         Object.defineProperty(obj, symbol, { value: 'value', enumerable: true });
         expect(isEmpty(obj)).toBe(true);
     });
+
+    // Object with an inherited key
+    it('should return true for an object with an inherited property', () => {
+        const prototype = { inheritedKey: 'value' };
+        const obj = Object.create(prototype);
+        expect(isEmpty(obj)).toBe(true);
+    });
 });
