@@ -9,12 +9,12 @@ describe('Ceil', () => {
         expect(ceil(1,1)).toBe(1.0);
     });
 
-    it('should ceil to 34 precision', () => {
-        expect(ceil(1,34)).toBe(1.0000000000000000000000000000000000);
+    it('should ceil to 17 precision', () => {
+        expect(ceil(1.00000000000000001,17)).toBe(1.00000000000000001);
     });
 
-    it('should throw RangeError when precision is more than 34', () => {
-        expect(ceil(1,35)).toThrow(RangeError);
+    it('should throw RangeError when precision is more than 17', () => {
+        expect(ceil(1,18)).toThrow(RangeError);
     });
 
     it('should ceil to -15 precision', () => { // New test case
