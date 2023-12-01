@@ -1,9 +1,9 @@
 import countBy from '../src/countBy';
 
 describe('CountBy', () => {
-    it('should throw a TypeError for an undefined collection', () => { // New test case
+    it('should return an empty object for an undefined collection', () => { // New test case
         const result = countBy(undefined, item => item.category);
-        expect(result).toThrow(TypeError);
+        expect(result).toEqual({});
     });
 
     it('should return an empty object for an empty collection with undefined iteratee', () => {
