@@ -34,8 +34,20 @@ describe('reduce', () => {
         expect(() => reduce([1.0, 2.0, 3.1], (sum, n) => sum + n, 'abc')).toThrow();
     });
 
-    it('should throw an exception if an element in collection is not a number', () => {
+    it('should throw an exception if an element in a collection of numbers is string', () => {
         expect(() => reduce([1.0, "abc", 3.1], (sum, n) => sum + n, 0)).toThrow();
+    });
+
+    it('should throw an exception if an element in a collection of numbers is NaN', () => {
+        expect(() => reduce([1.0, NaN, 3.1], (sum, n) => sum + n, 0)).toThrow();
+    });
+
+    it('should throw an exception if an element in a collection of numbers is null', () => {
+        expect(() => reduce([1.0, null, 3.1], (sum, n) => sum + n, 0)).toThrow();
+    });
+
+    it('should throw an exception if an element in a collection of numbers is undefined', () => {
+        expect(() => reduce([1.0, undefined, 3.1], (sum, n) => sum + n, 0)).toThrow();
     });
 
     it('should reduce an object to an array of keys grouped by their values', () => {
