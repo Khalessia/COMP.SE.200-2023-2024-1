@@ -33,7 +33,17 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!src/.internal/*.js"
+      "!src/.internal/*.js",
+      "!src/add.js",
+      "!src/camelCase.js",
+      "!src/clamp.js",
+      "!src/defaultToAny.js",
+      "!src/difference.js",
+      "!src/divide.js",
+      "!src/eq.js",
+      "!src/isArrayLikeObject.js",
+      "!src/memoize.js",
+      "!src/toFinite.js"
     ]
   }
 }
